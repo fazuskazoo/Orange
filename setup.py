@@ -1,11 +1,11 @@
 import pathlib
-from setuptools import setup, parse_requirements
+from setuptools import setup
+from pkg_resources import parse_requirements
 
 here = pathlib.Path(__file__).parent
 
-install_reqs = parse_requirments('requirements.txt')
-reqs = [str(ir.req) for ir in install_reqs]
-print(reqs)
+with open('requirements.txt') as fp:
+    install_reqs = fp.read()
 
 
 with open("README.md", "r") as fh:
@@ -23,7 +23,7 @@ setup(
  packages=["orange"],
  python_requires='>=3.8',
  include_package_data=True,
- install_requires=reqs,
+ install_requires=install_reqs,
  classifiers=[
   "Programming Language :: Python :: 3",
   "Operating System :: POSIX :: Linux",
