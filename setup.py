@@ -7,17 +7,21 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
- name="orange",
- version="0.0.1",
+ name="oxrange",
+ version="0.0.3",
  author="Fazus Kazoo",
  description="Python things",
  long_description=long_description,
  long_description_content_type="text/markdown",
  license="GPL",
- url="https://github/fazuskazoo.com/Orange",
+ url="https://github.com/fazuskazoo/Orange",
  packages=["orange"],
  python_requires='>=3.8',
  include_package_data=True,
+ classifiers=[
+  "Programming Language :: Python :: 3",
+  "Operating System :: POSIX :: Linux",
+ ],
  entry_points={
       "console_scripts": [
            ]

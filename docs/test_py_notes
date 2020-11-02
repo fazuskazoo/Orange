@@ -1,0 +1,15 @@
+
+
+# Uploading the project to test.pypi.org
+
+1) Register
+2) python setup.py sdist bdist_wheel
+   populate the dist directory
+3) python -m twine upload --repository testpypi dist/*
+   uploads the proejec to https://test.pypi.org/[username]/[project name]
+
+   -- the project name is specified in the setup.py file setup ( name='oxrange' )
+   To update the project
+   a.  Update the version number
+   b.  twine upload --skip-existing -r testpypi dist/*
+       Uploads the new version and ignores  the existing project
