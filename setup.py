@@ -8,13 +8,16 @@ here = pathlib.Path(__file__).parent
 with open('requirements.txt') as fp:
     install_reqs = fp.read()
 
+with open('system_requirements.txt') as fp:
+    sysinstall_reqs = fp.read()
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 class SystemBuild(_build.build):
     def run(self):
         print("System Build")
-
+        print(sysinstall_reqs)
 setup(
  name="oxrange",
  version="0.0.3",
