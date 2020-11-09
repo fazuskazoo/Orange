@@ -1,0 +1,14 @@
+[metadata]
+name = "orange"
+version = 0.0.3
+author="Fazus Kazoo"
+description="Python things"
+long_description_content_type="text/markdown"
+license="GPL"
+url="https://github.com/fazuskazoo/Orange"
+
+[options]
+packages="orange"
+install_requires=
+    requests
+    importlib; python_version == "3.8"
