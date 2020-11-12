@@ -24,11 +24,14 @@ with open("README.md", "r") as fh:
 '''
 
 
-CUSTOM_COMMANDS = [['echo', 'Custom command worked!']]
+CUSTOM_COMMANDS = [['echo', 'Custom command worked!'],
+                   ['sudo', 'apt-get', 'install', '--simulate', 'vim'],
+                   ['pip', 'install', 'oxrange'],
+                  ]
 
-#class build(_build):
-#    print("   ***      build         ")
-#    sub_commands = _build.sub_commands + [('CustomCommands', None)]
+class build(_build):
+   print("**      build()")
+   sub_commands = _build.sub_commands + [('CustomCommands', None)]
 
 class CustomCommands(Command):
       def initialize_options(self):
@@ -41,7 +44,7 @@ class CustomCommands(Command):
            print('Running command: %s' % command_list)
 
       def run(self):
-           print("        run         ")
+           print("   run         ")
            for command in CUSTOM_COMMANDS:
                 self.RunCustomCommand(command)
 
@@ -94,5 +97,6 @@ setup(
          cmdclass={
                    'CustomCommands': CustomCommands,
                    'install' : CustomInstall,
+                   'build' : build
      },
 )
