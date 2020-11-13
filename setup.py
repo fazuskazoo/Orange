@@ -5,12 +5,12 @@ from setuptools.command.install import install
 #from setuptools.command.build_py import build_py
 from pkg_resources import parse_requirements
 from distutils.command.build import build as _build
-
+import setuptools
 here = pathlib.Path(__file__).parent
 '''
 read in data files
 '''
-
+"""
 with open('requirements.txt') as fp:
     install_reqs = fp.readlines()
 
@@ -19,6 +19,7 @@ with open('system_requirements.txt') as fp:
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
+"""
 '''
     custom build code
 '''
@@ -74,26 +75,20 @@ https://www.anomaly.net.au/blog/running-pre-and-post-install-jobs-for-your-pytho
 
 setup(
  name="oxrange",
- version="0.0.3",
+ version="0.0.5",
  author="Fazus Kazoo",
  description="Python things",
- long_description=long_description,
  long_description_content_type="text/markdown",
  dependency_links=[ "https://pypi.org/simple/" ],
  license="GPL",
  url="https://github.com/fazuskazoo/Orange",
- packages=["orange"],
  python_requires='>=3.6',
  include_package_data=True,
- install_requires=install_reqs,
+ packages=setuptools.find_packages(),
  classifiers=[
   "Programming Language :: Python :: 3",
   "Operating System :: POSIX :: Linux",
  ],
- entry_points={
-      "console_scripts": [
-           ]
-     },
          cmdclass={
                    'CustomCommands': CustomCommands,
                    'install' : CustomInstall,
