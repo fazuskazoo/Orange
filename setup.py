@@ -71,10 +71,12 @@ https://www.anomaly.net.au/blog/running-pre-and-post-install-jobs-for-your-pytho
 
 """
 
+data_files = [ ('start', ['start.json'] ) ]
 
 setup(
  name="oxrange",
- version="0.0.6",
+ version="0.0.7",
+ author_email="fazuskazoo@gmail.com",
  author="Fazus Kazoo",
  description="Python things",
  long_description_content_type="text/markdown",
@@ -83,6 +85,7 @@ setup(
  url="https://github.com/fazuskazoo/Orange",
  python_requires='>=3.6',
  include_package_data=True,
+ data_files=data_files,
  packages=setuptools.find_packages(),
  classifiers=[
   "Programming Language :: Python :: 3",
