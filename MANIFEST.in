@@ -1,3 +1,5 @@
-include start.json requirements.txt system_requirements.txt
+include requirements.txt system_requirements.txt
 
 recursive-include bin *
+
+
