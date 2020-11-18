@@ -1,0 +1,4 @@
+#!/bin/bash
+echo 'y' | pip uninstall oxrange
+python setup.py  bdist_wheel
+pip install dist/oxrange-0.0.7-py3-none-any.whl

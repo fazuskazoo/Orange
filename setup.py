@@ -1,5 +1,6 @@
 import pathlib
 from setuptools import setup
+from setuptools import find_packages
 from setuptools import Command
 from setuptools.command.install import install
 from pkg_resources import parse_requirements
@@ -48,9 +49,10 @@ setup(
  url="https://github.com/fazuskazoo/Orange",
  python_requires='>=3.6',
  include_package_data=True,
- packages=['orange'],
+ packages=find_packages(),
  package_data={
   'orange':['*.json'],
+  'orange.config':['orange.cfg'],
 
      },
  classifiers=[
