@@ -55,6 +55,11 @@ setup(
   'orange.config':['orange.cfg'],
 
      },
+ entry_points={
+       'console_scripts': [
+              'orange_go = orange.utils:go'
+           ]
+     },
  classifiers=[
   "Programming Language :: Python :: 3",
   "Operating System :: POSIX :: Linux",
