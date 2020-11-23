@@ -1,3 +1,4 @@
 #!/bin/bash
 
-pip install dist/oxrange-0.0.7-py3-none-any.whl
+
+python3 -m pip install --ignore-installed dist/oxrange-0.0.7-py3-none-any.whl
